@@ -15,7 +15,7 @@
     - id: string
 
 - Criar toda a estrutura de contextApi para as tasks
-    - O tipo de dado guardado aqui será do tipo ITask  
+    - O tipo de dado guardado aqui será do tipo ITask
     - Criar função chamada findById, em que busca a task pelo id e retorna ele
     - As funções que ele executará é
         - Add task que espera receber ITask sem id, (ai aqui eu tenho que criar um tipo desse sem id) e add ao state e criará um id aqui
@@ -23,7 +23,7 @@
         - Remover, ele espera receber um id, e com esse id ele procura a task com a função findById e remove ela
         - toggleStatus, em que espera receber um id e um tipo statusType com o id que ele recebe ele busca o id com a função findById e altera o status da task, usando o dado recebido
 
-- Criar um modalComponent de formulario que não precisa apagar os dados no input ao fechar a tela ou ao salvar os dados
+- Criar um modalComponent de formulario que não precisa apagar os dados no input ao fechar a tela ou ao salvar os dados esse componente ele usa o memo 
     - Esse componente ele espera receber de forma opcional ou sejá não obrigatoria uma prop do tipo ITask
     - Esse componente ele terá um formulario que usará o forwardRef para conseguir resetar todos os inputs dentro dele, que serão
         - Input para titulo
@@ -36,7 +36,7 @@
         - Ambas as funcionalidades do botão fecham o modal 
     - Terá um botão nesse modal escrito fechar, que fecha o modal
 
-- Fazer um card component de card que posso estilizar com o tailwind css e recebe as seguintes props posicionando em cada lugar
+- Fazer um card component de card que posso estilizar com o tailwind css e recebe as seguintes props posicionando em cada lugar, esse componente ele usa o memo 
     - Checkbox a esquerda do titulo, que ao ser alterado ele valida se o Checkbox estiver true, marcado ele passa junto com o id a palavra Concluída, do contrario é Pendente e chama a função toggleStatus do contextApi, passando o id tbm
     - Titulo na parte superior a esquerda
     - Descrição abaixo do Titulo
@@ -48,6 +48,8 @@
 - Criar um componente chamado TaskDashboard
     - Criar um .map que vai exibir os components de cards e puxando os dados do state armazenado no contextApi
     - Ele terá um botão de limpar que ao ser clicado chama o ref do componente de modalComponent e reseat os campos de input do formulario
+    - Usando o ref ele deverá acessar o campo de titulo e ao abrir o form ele já está em foco
+    - Colocar na tela a quantidade total de tarefas que é o retorno de uma functions que ver a quantidade de tasks no state, essa função que tem useMemo, que só atualiza quando o state do contextApi for atualizado
 
 - Colocar o TaskDashboard no App
 
@@ -59,3 +61,4 @@
     - Testar funcionalidade de editar task
         - Testar ao alterar o status para concluido ou diferente de concluido
     - Testar funcionalidade de excluir task
+    - Ver se ao atualizar o state se a contagem total é atualizada
