@@ -1,14 +1,14 @@
-- Criar o projeto com react e configurar ele
+x Criar o projeto com react e configurar ele
 
-- Vai ter um type chamado statusType, com esses valores (Pendente, Em andamento, Concluída)
-- Vai ter um type chamado priorityType, com esses valores (Alta, Média, Baixa)
+x Vai ter um type chamado statusType, com esses valores (Pendente, Em andamento, Concluída)
+x Vai ter um type chamado priorityType, com esses valores (Alta, Média, Baixa)
 
-- Interface de ITask
-    - title: string
-    - descriptions: string
-    - priority: priorityType
-    - status: statusType
-    - id: string
+x Interface de ITask
+    x title: string
+    x descriptions: string
+    x priority: priorityType
+    x status: statusType
+    x id: string
 
 - Criar toda a estrutura de contextApi para as tasks
     - O tipo de dado guardado aqui será do tipo ITask
