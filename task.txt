@@ -11,13 +11,12 @@ x Interface de ITask
     x id: string
 
 - Criar toda a estrutura de contextApi para as tasks
-    - O tipo de dado guardado aqui será do tipo ITask
-    - Criar função chamada findById, em que busca a task pelo id e retorna ele
-    - As funções que ele executará é
-        - Add task que espera receber ITask sem id, (ai aqui eu tenho que criar um tipo desse sem id) e add ao state e criará um id aqui
-        - Editar task que espera receber ITask pegar o id passado e usa para buscar a task com a função findById dentro do state ao encontrar, elçe atualiza os dados dessa task sem criar um novo id
-        - Remover, ele espera receber um id, e com esse id ele procura a task com a função findById e remove ela
-        - toggleStatus, em que espera receber um id e um tipo statusType com o id que ele recebe ele busca o id com a função findById e altera o status da task, usando o dado recebido
+    x O tipo de dado guardado aqui será do tipo ITask
+    x As funções que ele executará é
+        x Add task que espera receber ITask sem id, (ai aqui eu tenho que criar um tipo desse sem id) e add ao state e criará um id aqui
+        x Editar task que espera receber ITask pegar o id passado e usa para buscar a task dentro do state ao encontrar, ele atualiza os dados dessa task sem criar um novo id
+        x Remover, ele espera receber um id, e com esse id ele procura a task e remove ela
+        x toggleStatus, em que espera receber um id e um tipo statusType com o id que ele recebe ele busca o id e altera o status da task, usando o dado recebido
 
 - Criar um modalComponent de formulario que não precisa apagar os dados no input ao fechar a tela ou ao salvar os dados esse componente ele usa o memo 
     - Esse componente ele espera receber de forma opcional ou sejá não obrigatoria uma prop do tipo ITask
