@@ -16,10 +16,12 @@
 
 - Criar toda a estrutura de contextApi para as tasks
     - O tipo de dado guardado aqui será do tipo ITask  
+    - Criar função chamada findById, em que busca a task pelo id e retorna ele
     - As funções que ele executará é
         - Add task que espera receber ITask sem id, (ai aqui eu tenho que criar um tipo desse sem id) e add ao state e criará um id aqui
-        - Editar task que espera receber ITask pegar o id passado e usa para buscar a task dentro do state ao encontrar, elçe atualiza os dados dessa task sem criar um novo id
-        - Remover, ele espera receber um id, e com esse id ele procura a task e remove ela
+        - Editar task que espera receber ITask pegar o id passado e usa para buscar a task com a função findById dentro do state ao encontrar, elçe atualiza os dados dessa task sem criar um novo id
+        - Remover, ele espera receber um id, e com esse id ele procura a task com a função findById e remove ela
+        - toggleStatus, em que espera receber um id e um tipo statusType com o id que ele recebe ele busca o id com a função findById e altera o status da task, usando o dado recebido
 
 - Criar um modalComponent de formulario que não precisa apagar os dados no input ao fechar a tela ou ao salvar os dados
     - Esse componente ele espera receber de forma opcional ou sejá não obrigatoria uma prop do tipo ITask
@@ -30,10 +32,12 @@
         - Campo de seleção de status que terão as opções de statusType
     - Se o param que esse componente espera receber vier com dados os campos receberam como value esses dados, do contrario eles ficam vazios mesmos
     - Se o param que esse componente espera receber vier com dados nesse component terá o botão de add tarefa que chama a função do contextApi de add tarefas passando os dados necessarios, do contrario será um botão escrito confirmar edição que chamará o método de editar do contextApi passando todos os dados
-        - Ambas as funcionalidades do botão fecham o modal
+        - Se estiver na opção de editar antes de enviar os dados tem que validar se o status foi alterado se foi para concluido o checkbox é marcado se foi para diferente de concluido ele é desmarcado. 
+        - Ambas as funcionalidades do botão fecham o modal 
     - Terá um botão nesse modal escrito fechar, que fecha o modal
 
 - Fazer um card component de card que posso estilizar com o tailwind css e recebe as seguintes props posicionando em cada lugar
+    - Checkbox a esquerda do titulo, que ao ser alterado ele valida se o Checkbox estiver true, marcado ele passa junto com o id a palavra Concluída, do contrario é Pendente e chama a função toggleStatus do contextApi, passando o id tbm
     - Titulo na parte superior a esquerda
     - Descrição abaixo do Titulo
     - Status de prioridade na parte superior a direita que será do tipo priorityType
@@ -53,4 +57,5 @@
     - Testar funcionalidade de add task
         - Ao add a task abrirá um modal de add task em que se eu salvar ou fechar o modal ele não apaga os dados os input, só se eu clicar em limpar
     - Testar funcionalidade de editar task
+        - Testar ao alterar o status para concluido ou diferente de concluido
     - Testar funcionalidade de excluir task
