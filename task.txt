@@ -12,23 +12,35 @@
     - descriptions: string
     - priority: priorityType
     - status: statusType
+    - id: string
 
 - Criar toda a estrutura de contextApi para as tasks
     - O tipo de dado guardado aqui será do tipo ITask  
     - As funções que ele executará é
-        - Add task que espera receber ITask e add ao state
+        - Add task que espera receber ITask e add ao state e criará um id
+
+- Criar um modalComponent de formulario que não precisa apagar os dados no input ao fechar a tela ou ao salvar os dados
+    - Esse componente ele terá um formulario que usará o forwardRef para conseguir resetar todos os inputs dentro dele, que serão
+        - Input para titulo
+        - Input para desrição
+        - Campo de seleção de prioridade que terão as opções de priorityType
+        - Campo de seleção de status que terão as opções de statusType
+    - Nesse component terá o botão de add tarefa que chama a função do contextApi de add tarefas passando os dados necessarios
 
 - Fazer um card component de card que posso estilizar com o tailwind css e recebe as seguintes props posicionando em cada lugar
     - Titulo na parte superior a esquerda
     - Descrição abaixo do Titulo
-    - Status de prioridade na parte superior a direita que será do tipo statusType
+    - Status de prioridade na parte superior a direita que será do tipo priorityType
     - Status que será do tipo statusType
-
-- Funcionalidade de adicionar task
-    - Esperar receber dados do tipo ITask
-    - Chama a função add text do contextApi passando os dados
 
 - Criar um componente chamado TaskDashboard
     - Criar um .map que vai exibir os components de cards e puxando os dados do state armazenado no contextApi
+    - Ele terá um botão de limpar que ao ser clicado chama o ref do componente de modalComponent e reseta os campos de input do formulario
 
 - Colocar o TaskDashboard no App
+
+- No App terá um botão de add tarefas, que abrirá um modalComponent
+
+- Testes
+    - Testar funcionalidade de add task
+        - Ao add a task abrirá um modal de add task em que se eu salvar ou fechar o modal ele não apaga os dados os input, só se eu clicar em limpar
