@@ -1,0 +1,34 @@
+- Ver onde vou incluir o as funcionalidades
+
+- Revisar o fluxo abaixo para ver se faz sentido
+
+- Criar o projeto com react e configurar ele
+
+- Vai ter um type chamado statusType, com esses valores (Pendente, Em andamento, Concluída)
+- Vai ter um type chamado priorityType, com esses valores (Alta, Média, Baixa)
+
+- Interface de ITask
+    - title: string
+    - descriptions: string
+    - priority: priorityType
+    - status: statusType
+
+- Criar toda a estrutura de contextApi para as tasks
+    - O tipo de dado guardado aqui será do tipo ITask  
+    - As funções que ele executará é
+        - Add task que espera receber ITask e add ao state
+
+- Fazer um card component de card que posso estilizar com o tailwind css e recebe as seguintes props posicionando em cada lugar
+    - Titulo na parte superior a esquerda
+    - Descrição abaixo do Titulo
+    - Status de prioridade na parte superior a direita que será do tipo statusType
+    - Status que será do tipo statusType
+
+- Funcionalidade de adicionar task
+    - Esperar receber dados do tipo ITask
+    - Chama a função add text do contextApi passando os dados
+
+- Criar um componente chamado TaskDashboard
+    - Criar um .map que vai exibir os components de cards e puxando os dados do state armazenado no contextApi
+
+- Colocar o TaskDashboard no App
