@@ -19,6 +19,7 @@
     - As funções que ele executará é
         - Add task que espera receber ITask sem id, (ai aqui eu tenho que criar um tipo desse sem id) e add ao state e criará um id aqui
         - Editar task que espera receber ITask pegar o id passado e usa para buscar a task dentro do state ao encontrar, elçe atualiza os dados dessa task sem criar um novo id
+        - Remover, ele espera receber um id, e com esse id ele procura a task e remove ela
 
 - Criar um modalComponent de formulario que não precisa apagar os dados no input ao fechar a tela ou ao salvar os dados
     - Esse componente ele espera receber de forma opcional ou sejá não obrigatoria uma prop do tipo ITask
@@ -38,6 +39,7 @@
     - Status de prioridade na parte superior a direita que será do tipo priorityType
     - Status que será do tipo statusType
     - Botão de editar task, que ao ser clicada passa para os modalComponent todos os dados do card
+    - Botão de remover, que chama o método de deletar do contextApi passando o id
 
 - Criar um componente chamado TaskDashboard
     - Criar um .map que vai exibir os components de cards e puxando os dados do state armazenado no contextApi
@@ -51,3 +53,4 @@
     - Testar funcionalidade de add task
         - Ao add a task abrirá um modal de add task em que se eu salvar ou fechar o modal ele não apaga os dados os input, só se eu clicar em limpar
     - Testar funcionalidade de editar task
+    - Testar funcionalidade de excluir task
