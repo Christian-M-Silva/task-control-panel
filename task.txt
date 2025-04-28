@@ -10,7 +10,7 @@ x Interface de ITask
     x status: statusType
     x id: string
 
-- Criar toda a estrutura de contextApi para as tasks
+x Criar toda a estrutura de contextApi para as tasks
     x O tipo de dado guardado aqui será do tipo ITask
     x As funções que ele executará é
         x Add task que espera receber ITask sem id, (ai aqui eu tenho que criar um tipo desse sem id) e add ao state e criará um id aqui
@@ -18,18 +18,44 @@ x Interface de ITask
         x Remover, ele espera receber um id, e com esse id ele procura a task e remove ela
         x toggleStatus, em que espera receber um id e um tipo statusType com o id que ele recebe ele busca o id e altera o status da task, usando o dado recebido
 
-- Criar um modalComponent de formulario que não precisa apagar os dados no input ao fechar a tela ou ao salvar os dados esse componente ele usa o memo 
-    - Esse componente ele espera receber de forma opcional ou sejá não obrigatoria uma prop do tipo ITask
+x Criar type de selectProp
+    x value: string
+    x option: string
+
+- Criar um inputComponent que tem uma ref também para expor seus atributos
+    - Terá uma prop chamada label: string
+    - A estilização será essa:
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">{label}</label>
+                        <input
+                            ref={ref}
+                            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        />
+                    </div>
+
+- Criar um select component
+    - Espera receber uma prop de options que é um array de selectProp
+    - A estilização:
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">{label}</label>
+                        <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+                           // Aqui é um map da prop de options  <option value={prop.value}>{prop.option}</option>
+                        </select>
+                    </div>
+
+x Criar um modalComponent de formulario, ele usa o memo 
+    x Esse componente ele espera receber de forma opcional ou sejá não obrigatoria uma prop do tipo ITask
     - Esse componente ele terá um formulario que usará o forwardRef para conseguir resetar todos os inputs dentro dele, que serão
-        - Input para titulo
-        - Input para descrição
+        - Input para titulo usando o inputComponent passando o label e o placeholder
+        - Input para descrição usando o inputComponent passando o label e o placeholder
         - Campo de seleção de prioridade que terão as opções de priorityType
         - Campo de seleção de status que terão as opções de statusType
     - Se o param que esse componente espera receber vier com dados os campos receberam como value esses dados, do contrario eles ficam vazios mesmos
     - Se o param que esse componente espera receber vier com dados nesse component terá o botão de add tarefa que chama a função do contextApi de add tarefas passando os dados necessarios, do contrario será um botão escrito confirmar edição que chamará o método de editar do contextApi passando todos os dados
         - Se estiver na opção de editar antes de enviar os dados tem que validar se o status foi alterado se foi para concluido o checkbox é marcado se foi para diferente de concluido ele é desmarcado. 
         - Ambas as funcionalidades do botão fecham o modal 
-    - Terá um botão nesse modal escrito fechar, que fecha o modal
+        - Ambas as funcionalidades não precisa apagar os dados no input ao fechar a tela ou ao salvar os dados esse componente
+    - Terá um botão nesse modal escrito fechar, que fecha o modal, não precisa apagar os dados no input ao fechar a tela ou ao salvar os dados esse componente
 
 - Fazer um card component de card que posso estilizar com o tailwind css e recebe as seguintes props posicionando em cada lugar, esse componente ele usa o memo 
     - Checkbox a esquerda do titulo, que ao ser alterado ele valida se o Checkbox estiver true, marcado ele passa junto com o id a palavra Concluída, do contrario é Pendente e chama a função toggleStatus do contextApi, passando o id tbm

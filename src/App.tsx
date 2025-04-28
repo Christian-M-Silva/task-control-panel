@@ -1,8 +1,10 @@
+import { Modal } from "./components/modalComponent"
+
 function App() {
 
   return (
     <>
-     <div>Hello</div>
+     <Modal task={{descriptions: '', id: '', priority: 'Alta', status: 'Concluída', title: 'Alta'}}/>
     </>
   )
 }
