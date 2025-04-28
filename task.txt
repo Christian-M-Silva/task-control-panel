@@ -17,25 +17,31 @@
 - Criar toda a estrutura de contextApi para as tasks
     - O tipo de dado guardado aqui será do tipo ITask  
     - As funções que ele executará é
-        - Add task que espera receber ITask e add ao state e criará um id
+        - Add task que espera receber ITask sem id, (ai aqui eu tenho que criar um tipo desse sem id) e add ao state e criará um id aqui
+        - Editar task que espera receber ITask pegar o id passado e usa para buscar a task dentro do state ao encontrar, elçe atualiza os dados dessa task sem criar um novo id
 
 - Criar um modalComponent de formulario que não precisa apagar os dados no input ao fechar a tela ou ao salvar os dados
+    - Esse componente ele espera receber de forma opcional ou sejá não obrigatoria uma prop do tipo ITask
     - Esse componente ele terá um formulario que usará o forwardRef para conseguir resetar todos os inputs dentro dele, que serão
         - Input para titulo
-        - Input para desrição
+        - Input para descrição
         - Campo de seleção de prioridade que terão as opções de priorityType
         - Campo de seleção de status que terão as opções de statusType
-    - Nesse component terá o botão de add tarefa que chama a função do contextApi de add tarefas passando os dados necessarios
+    - Se o param que esse componente espera receber vier com dados os campos receberam como value esses dados, do contrario eles ficam vazios mesmos
+    - Se o param que esse componente espera receber vier com dados nesse component terá o botão de add tarefa que chama a função do contextApi de add tarefas passando os dados necessarios, do contrario será um botão escrito confirmar edição que chamará o método de editar do contextApi passando todos os dados
+        - Ambas as funcionalidades do botão fecham o modal
+    - Terá um botão nesse modal escrito fechar, que fecha o modal
 
 - Fazer um card component de card que posso estilizar com o tailwind css e recebe as seguintes props posicionando em cada lugar
     - Titulo na parte superior a esquerda
     - Descrição abaixo do Titulo
     - Status de prioridade na parte superior a direita que será do tipo priorityType
     - Status que será do tipo statusType
+    - Botão de editar task, que ao ser clicada passa para os modalComponent todos os dados do card
 
 - Criar um componente chamado TaskDashboard
     - Criar um .map que vai exibir os components de cards e puxando os dados do state armazenado no contextApi
-    - Ele terá um botão de limpar que ao ser clicado chama o ref do componente de modalComponent e reseta os campos de input do formulario
+    - Ele terá um botão de limpar que ao ser clicado chama o ref do componente de modalComponent e reseat os campos de input do formulario
 
 - Colocar o TaskDashboard no App
 
@@ -44,3 +50,4 @@
 - Testes
     - Testar funcionalidade de add task
         - Ao add a task abrirá um modal de add task em que se eu salvar ou fechar o modal ele não apaga os dados os input, só se eu clicar em limpar
+    - Testar funcionalidade de editar task
