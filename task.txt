@@ -1,7 +1,3 @@
-- Ver onde vou incluir o as funcionalidades
-
-- Revisar o fluxo abaixo para ver se faz sentido
-
 - Criar o projeto com react e configurar ele
 
 - Vai ter um type chamado statusType, com esses valores (Pendente, Em andamento, Concluída)
