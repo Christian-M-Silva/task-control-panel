@@ -10,3 +10,7 @@ export type SelectProp = {
     value: string
     options: string
 }
+
+export type InputProps = {
+    label: string
+}

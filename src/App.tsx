@@ -1,4 +1,4 @@
-import { Modal } from "./components/modalComponent"
+import { Modal } from "./components/ModalComponent"
 
 function App() {
 

@@ -22,9 +22,9 @@ x Criar type de selectProp
     x value: string
     x option: string
 
-- Criar um inputComponent que tem uma ref também para expor seus atributos
-    - Terá uma prop chamada label: string
-    - A estilização será essa:
+x Criar um inputComponent que tem uma ref também para expor seus atributos
+    x Terá uma prop chamada label: string
+    x A estilização será essa:
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">{label}</label>
                         <input
