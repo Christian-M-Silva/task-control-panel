@@ -6,11 +6,16 @@ export type TaskWithoutIdType = Omit<ITask, 'id'>
 export type ModalProp = {
     task: ITask
 }
-export type SelectProp = {
-    value: string
-    options: string
-}
 
 export type InputProps = {
     label: string
+}
+
+type Options = {
+    value: string
+    options: string
+}
+export type SelectProp = {
+    label: string
+    options: Options[]
 }
