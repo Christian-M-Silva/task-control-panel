@@ -35,7 +35,7 @@ x Criar um inputComponent que tem uma ref também para expor seus atributos
 
 x Criar um select component
     x Espera receber uma prop de options que é um array de selectProp
-    - A estilização:
+    x A estilização:
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">{label}</label>
                         <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
@@ -43,7 +43,7 @@ x Criar um select component
                         </select>
                     </div>
 
-- Substituir seu uso no modalComponent
+x Substituir seu uso no modalComponent
 
 x Criar um modalComponent de formulario, ele usa o memo 
     x Esse componente ele espera receber de forma opcional ou sejá não obrigatoria uma prop do tipo ITask

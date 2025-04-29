@@ -1,5 +1,7 @@
 import { forwardRef, memo } from "react";
 import { ModalProp } from "../../tipagens/types";
+import { Input } from "../InputComponent";
+import { Select } from "../SelectComponent";
 
 
 
@@ -17,42 +19,32 @@ const ModalComponent = forwardRef<HTMLFormElement, ModalProp>((props, ref) => {
 
                 <form ref={ref} className="flex flex-col space-y-4">
                     {/* Input Título */}
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Título</label>
-                        <input
-                            type="text"
-                            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-                            placeholder="Digite o título"
-                        />
-                    </div>
+                    <Input
+                        label="Título"
+                        placeholder="Digite o título"
+                    />
 
                     {/* Input Descrição */}
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Descrição</label>
-                        <input
-                            type="text"
-                            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-                            placeholder="Digite a descrição"
-                        />
-                    </div>
+                    <Input
+                        label="Descrição"
+                        placeholder="Digite a descrição"
+                    />
 
                     {/* Select Prioridade */}
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Prioridade</label>
-                        <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
-                            <option value="">Selecione a prioridade</option>
-                            {/* Mapear os priorityType aqui */}
-                        </select>
-                    </div>
+                    <Select label="Prioridade" options={[
+                        { options: 'Alta', value: 'alta' },
+                        { options: 'Média', value: 'media' },
+                        { options: 'Baixa', value: 'baixa' }
+
+                    ]} />
 
                     {/* Select Status */}
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Status</label>
-                        <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
-                            <option value="">Selecione o status</option>
-                            {/* Mapear os statusType aqui */}
-                        </select>
-                    </div>
+                    <Select label="Status" options={[
+                        { options: 'Pendente', value: 'pendente' },
+                        { options: 'Em andamento', value: 'andamento' },
+                        { options: 'Concluída', value: 'concluida' }
+
+                    ]} />
 
                     {/* Botão Adicionar */}
                     <button

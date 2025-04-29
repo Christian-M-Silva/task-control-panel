@@ -1,3 +1,4 @@
+import { InputHTMLAttributes } from "react";
 import { PriorityType, StatusType } from "./types";
 
 export interface ITask{
@@ -6,4 +7,8 @@ export interface ITask{
     priority: PriorityType,
     status: StatusType,
     id: string
+}
+
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+    label: string
 }

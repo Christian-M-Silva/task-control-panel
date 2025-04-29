@@ -7,10 +7,6 @@ export type ModalProp = {
     task: ITask
 }
 
-export type InputProps = {
-    label: string
-}
-
 type Options = {
     value: string
     options: string
