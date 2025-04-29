@@ -1,8 +1,8 @@
 import { SelectHTMLAttributes } from "react";
 import { ITask } from "./interfaces";
 
-export type StatusType = "Pendente" | "Em andamento" | "Concluída";
-export type PriorityType = "Alta" | "Média" | "Baixa";
+export type StatusType = "pendente" | "andamento" | "concluida";
+export type PriorityType = "alta" | "media" | "baixa";
 export type TaskWithoutIdType = Omit<ITask, "id">;
 export type ModalProp = {
   task?: ITask;
