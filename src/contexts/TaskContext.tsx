@@ -41,7 +41,7 @@ export const TaskProvider = ({ children }: ChildrenProp) => {
 };
 
 
-export const useGenericContext = () => {
+export const useTaskContext = () => {
     const context = useContext(TaskContext);
     if (!context) {
 

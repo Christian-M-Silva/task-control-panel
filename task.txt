@@ -52,15 +52,14 @@ x Criar um modalComponent de formulario, ele usa o memo
         x Input para descrição usando o inputComponent passando o label e o placeholder
         x Campo de seleção de prioridade que terão as opções de priorityType
         x Campo de seleção de status que terão as opções de statusType
-    - Se o param que esse componente espera receber vier com dados os campos receberam como value esses dados, do contrario eles ficam vazios mesmos
-    - Se o param que esse componente espera receber vier com dados nesse component terá o botão de add tarefa que chama a função do contextApi de add tarefas passando os dados necessarios, do contrario será um botão escrito confirmar edição que chamará o método de editar do contextApi passando todos os dados
-        - Se estiver na opção de editar antes de enviar os dados tem que validar se o status foi alterado se foi para concluido o checkbox é marcado se foi para diferente de concluido ele é desmarcado. 
-        - Ambas as funcionalidades do botão fecham o modal 
-        - Ambas as funcionalidades não precisa apagar os dados no input ao fechar a tela ou ao salvar os dados esse componente
-    - Terá um botão nesse modal escrito fechar, que fecha o modal, não precisa apagar os dados no input ao fechar a tela ou ao salvar os dados esse componente
+    x Se o param que esse componente espera receber vier com dados os campos receberam como value esses dados, do contrario eles ficam vazios mesmos
+    x Se o param que esse componente espera receber vier com dados nesse component terá o botão de add tarefa que chama a função do contextApi de add tarefas passando os dados necessarios, do contrario será um botão escrito confirmar edição que chamará o método de editar do contextApi passando todos os dados
+        x Ambas as funcionalidades do botão fecham o modal 
+        x Ambas as funcionalidades não precisa apagar os dados no input ao fechar a tela ou ao salvar os dados esse componente
+    x Terá um botão nesse modal escrito fechar, que fecha o modal, não precisa apagar os dados no input ao fechar a tela ou ao salvar os dados esse componente
 
 - Fazer um card component de card que posso estilizar com o tailwind css e recebe as seguintes props posicionando em cada lugar, esse componente ele usa o memo 
-    - Checkbox a esquerda do titulo, que ao ser alterado ele valida se o Checkbox estiver true, marcado ele passa junto com o id a palavra Concluída, do contrario é Pendente e chama a função toggleStatus do contextApi, passando o id tbm
+    - Checkbox a esquerda do titulo, que ao ser alterado ele valida se o Checkbox estiver true, marcado ele passa junto com o id a palavra Concluída, do contrario é Pendente e chama a função toggleStatus do contextApi, passando o id tbm, se o status foi alterado se foi para concluido o checkbox é marcado se foi para diferente de concluido ele é desmarcado. 
     - Titulo na parte superior a esquerda
     - Descrição abaixo do Titulo
     - Status de prioridade na parte superior a direita que será do tipo priorityType
@@ -78,6 +77,7 @@ x Criar um modalComponent de formulario, ele usa o memo
 
 - No App terá um botão de add tarefas, que abrirá um modalComponent
 
+
 - Testes
     - Testar funcionalidade de add task
         - Ao add a task abrirá um modal de add task em que se eu salvar ou fechar o modal ele não apaga os dados os input, só se eu clicar em limpar
@@ -85,3 +85,4 @@ x Criar um modalComponent de formulario, ele usa o memo
         - Testar ao alterar o status para concluido ou diferente de concluido
     - Testar funcionalidade de excluir task
     - Ver se ao atualizar o state se a contagem total é atualizada
+    - Ver se os componentes estão sendo renderizados mais de uma vez, posso colocar um console.log toda ver que ele carrega ante sdo return

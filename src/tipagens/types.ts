@@ -6,6 +6,8 @@ export type PriorityType = "alta" | "media" | "baixa";
 export type TaskWithoutIdType = Omit<ITask, "id">;
 export type ModalProp = {
   task?: ITask;
+  isOpen: boolean;
+  onClose: () => void;
 };
 
 type Options = {
