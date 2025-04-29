@@ -6,7 +6,9 @@ import { Select } from "../SelectComponent";
 
 
 const ModalComponent = forwardRef<HTMLFormElement, ModalProp>((props, ref) => {
-    console.log(props)
+    console.log(props.task)
+    const isProps = !!props.task
+    console.log("🚀 ~ isProps:", isProps)
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
             <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-8 relative">
@@ -22,12 +24,14 @@ const ModalComponent = forwardRef<HTMLFormElement, ModalProp>((props, ref) => {
                     <Input
                         label="Título"
                         placeholder="Digite o título"
+                        value={isProps ? props.task?.title : ''}
                     />
 
                     {/* Input Descrição */}
                     <Input
                         label="Descrição"
                         placeholder="Digite a descrição"
+                        value={isProps ? props.task?.descriptions : ''}
                     />
 
                     {/* Select Prioridade */}
@@ -35,8 +39,9 @@ const ModalComponent = forwardRef<HTMLFormElement, ModalProp>((props, ref) => {
                         { options: 'Alta', value: 'alta' },
                         { options: 'Média', value: 'media' },
                         { options: 'Baixa', value: 'baixa' }
-
-                    ]} />
+                    ]}
+                        value={isProps ? props.task?.priority : ''}
+                    />
 
                     {/* Select Status */}
                     <Select label="Status" options={[
@@ -44,7 +49,9 @@ const ModalComponent = forwardRef<HTMLFormElement, ModalProp>((props, ref) => {
                         { options: 'Em andamento', value: 'andamento' },
                         { options: 'Concluída', value: 'concluida' }
 
-                    ]} />
+                    ]}
+                        value={isProps ? props.task?.status : ''}
+                    />
 
                     {/* Botão Adicionar */}
                     <button

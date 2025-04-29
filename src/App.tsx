@@ -4,7 +4,8 @@ function App() {
 
   return (
     <>
-     <Modal task={{descriptions: '', id: '', priority: 'Alta', status: 'Concluída', title: 'Alta'}}/>
+     <Modal task={{descriptions: 'DESCRIÇÃO', id: 'ID', priority: 'Alta', status: 'Em andamento', title: 'Alta'}}/>
+     {/* <Modal/> */}
     </>
   )
 }
