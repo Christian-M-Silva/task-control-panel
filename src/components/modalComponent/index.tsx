@@ -45,6 +45,7 @@ const ModalComponent = forwardRef<HTMLFormElement, ModalProp>((props, ref) => {
                         label="Título"
                         placeholder="Digite o título"
                         value={titleValue}
+                        onChange={(e) => setTitleValue(e.target.value)}
                     />
 
                     {/* Input Descrição */}
@@ -52,6 +53,8 @@ const ModalComponent = forwardRef<HTMLFormElement, ModalProp>((props, ref) => {
                         label="Descrição"
                         placeholder="Digite a descrição"
                         value={descriptionValue}
+                        onChange={(e) => setDescriptionValue(e.target.value)}
+
                     />
 
                     {/* Select Prioridade */}
@@ -61,6 +64,8 @@ const ModalComponent = forwardRef<HTMLFormElement, ModalProp>((props, ref) => {
                         { options: 'Baixa', value: 'baixa' }
                     ]}
                         value={priorityValue}
+                        onChange={(e) => setPriorityValue(e.target.value as PriorityType)}
+
                     />
 
                     {/* Select Status */}
@@ -71,6 +76,7 @@ const ModalComponent = forwardRef<HTMLFormElement, ModalProp>((props, ref) => {
 
                     ]}
                         value={statusValue}
+                        onChange={(e) => setStatusValue(e.target.value as StatusType)}
                     />
 
                     {/* Botão Adicionar ou editar */}

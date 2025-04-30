@@ -3,6 +3,13 @@ import { memo } from "react";
 import { CardProps } from "../../tipagens/types";
 
 function CardComponent({description, id, isChecked, priority, status, title}:CardProps) {
+    console.log("🚀 ~ CardComponent ~ title:", title)
+    console.log("🚀 ~ CardComponent ~ status:", status)
+    console.log("🚀 ~ CardComponent ~ priority:", priority)
+    console.log("🚀 ~ CardComponent ~ isChecked:", isChecked)
+    console.log("🚀 ~ CardComponent ~ id:", id)
+    console.log("🚀 ~ CardComponent ~ description:", description)
+    
     return (
         <div className="flex flex-col p-4 border rounded-2xl shadow-sm bg-white w-full max-w-md">
           <div className="flex justify-between items-start">

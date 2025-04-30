@@ -67,11 +67,11 @@ x Fazer um card component que posso estilizar com o tailwind css e recebe as seg
     x priority: PriorityType
     x id: string
     x isChecked: bolean
-- Esse componente usa o memo 
-- Incluir nele um console log nas props só para calra os erros de falta de uso
-- No App terá um botão de add tarefas, que abrirá um modalComponent
-- Criar um componente chamado TaskDashboard
-    - Criar função chamada isChecked que esperar receber do tipo statusType e ver se status é diferente de concluido, se for retorna false, senão true
+x Esse componente usa o memo 
+x Incluir nele um console log nas props só para calra os erros de falta de uso
+x No App terá um botão de add tarefas, que abrirá um modalComponent
+x Criar um componente chamado TaskDashboard
+    x Criar função chamada isChecked que esperar receber do tipo statusType e ver se status é diferente de concluido, se for retorna false, senão true
     - Criar um .map que vai exibir os components de cards e puxando os dados do state armazenado no contextApi e passar para esse card esses valores
         - No caso do status, ao passar eu chamo a função isChecked, passando de param o status
     - Ele terá um botão de limpar que ao ser clicado chama o ref do componente de modalComponent e reseat os campos de input do formulario

@@ -1,24 +1,23 @@
-// import { useState } from "react"
-// import { Modal } from "./components/ModalComponent"
+import { useState } from "react"
+import { Modal } from "./components/ModalComponent"
 
-import { Card } from "./components/CardComponent"
+// import { Card } from "./components/CardComponent"
 
 function App() {
-  // const [isOpenModal, setIsOpenModal] = useState<boolean>(false)
+  const [isOpenModal, setIsOpenModal] = useState<boolean>(false)
 
   return (
-    <>
-      {/* <Modal task={{descriptions: 'DESCRIÇÃO', id: 'ID', priority: 'alta', status: 'andamento', title: 'Alta'}}/> */}
-      {/* <Modal isOpen={isOpenModal} onClose={() => setIsOpenModal((prevValue) => !prevValue)} />
-
+    <div className="flex justify-center">
       <button
+        className="mt-4 w-full bg-green-700 text-white py-2 rounded-lg hover:bg-green-700 transition cursor-pointer"
         onClick={() => setIsOpenModal((prevValue) => !prevValue)}
       >
-        Add Task
-      </button> */}
+        Adicionar tarefas
+      </button>
+      <Modal isOpen={isOpenModal} onClose={() => setIsOpenModal((prevValue) => !prevValue)} />
 
-      <Card/>
-    </>
+      {/* <Card/> */}
+    </div>
 
 
   )
