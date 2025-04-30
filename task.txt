@@ -58,15 +58,15 @@ x Criar um modalComponent de formulario, ele usa o memo
         x Ambas as funcionalidades não precisa apagar os dados no input ao fechar a tela ou ao salvar os dados esse componente
     x Terá um botão nesse modal escrito fechar, que fecha o modal, não precisa apagar os dados no input ao fechar a tela ou ao salvar os dados esse componente
 
-- Planejar o card
+x Planejar o card
 
-- Fazer um card component que posso estilizar com o tailwind css e recebe as seguintes props:
-    - status: StatusType
-    - title: string
-    - description: string
-    - priority: PriorityType
-    - id: string
-    - isChecked: bolean
+x Fazer um card component que posso estilizar com o tailwind css e recebe as seguintes props:
+    x status: StatusType
+    x title: string
+    x description: string
+    x priority: PriorityType
+    x id: string
+    x isChecked: bolean
 - Esse componente usa o memo 
 - Incluir nele um console log nas props só para calra os erros de falta de uso
 - No App terá um botão de add tarefas, que abrirá um modalComponent

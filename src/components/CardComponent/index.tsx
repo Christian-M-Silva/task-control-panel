@@ -1,7 +1,8 @@
 import { Pencil, Trash2 } from "lucide-react";
 import { memo } from "react";
+import { CardProps } from "../../tipagens/types";
 
-function CardComponent() {
+function CardComponent({description, id, isChecked, priority, status, title}:CardProps) {
     return (
         <div className="flex flex-col p-4 border rounded-2xl shadow-sm bg-white w-full max-w-md">
           <div className="flex justify-between items-start">
