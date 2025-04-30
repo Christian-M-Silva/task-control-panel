@@ -58,31 +58,48 @@ x Criar um modalComponent de formulario, ele usa o memo
         x Ambas as funcionalidades não precisa apagar os dados no input ao fechar a tela ou ao salvar os dados esse componente
     x Terá um botão nesse modal escrito fechar, que fecha o modal, não precisa apagar os dados no input ao fechar a tela ou ao salvar os dados esse componente
 
-- Fazer um card component de card que posso estilizar com o tailwind css e recebe as seguintes props posicionando em cada lugar, esse componente ele usa o memo 
-    - Checkbox a esquerda do titulo, que ao ser alterado ele valida se o Checkbox estiver true, marcado ele passa junto com o id a palavra Concluída, do contrario é Pendente e chama a função toggleStatus do contextApi, passando o id tbm, se o status foi alterado se foi para concluido o checkbox é marcado se foi para diferente de concluido ele é desmarcado. 
-    - Titulo na parte superior a esquerda
-    - Descrição abaixo do Titulo
-    - Status de prioridade na parte superior a direita que será do tipo priorityType
-    - Status que será do tipo statusType
+- Planejar o card
+
+- Fazer um card component que posso estilizar com o tailwind css e recebe as seguintes props:
+    - status: StatusType
+    - title: string
+    - description: string
+    - priority: PriorityType
+    - id: string
+    - isChecked: bolean
+- Esse componente usa o memo 
+- Incluir nele um console log nas props só para calra os erros de falta de uso
+- No App terá um botão de add tarefas, que abrirá um modalComponent
+- Criar um componente chamado TaskDashboard
+    - Criar função chamada isChecked que esperar receber do tipo statusType e ver se status é diferente de concluido, se for retorna false, senão true
+    - Criar um .map que vai exibir os components de cards e puxando os dados do state armazenado no contextApi e passar para esse card esses valores
+        - No caso do status, ao passar eu chamo a função isChecked, passando de param o status
+    - Ele terá um botão de limpar que ao ser clicado chama o ref do componente de modalComponent e reseat os campos de input do formulario
+- Usando o ref no modalComponent ele deverá acessar o campo de titulo e ao abrir o form ele já está em foco
+- Colocar o TaskDashboard no App VER ZAP TASKS
+- O modal component terá:
+    - Função para serializar, o nome da função é serializarLabels ele esperar receber como param o statusType ou priorityType e ai tenho que alterar os nomes para labels que de paar ser usado para o user e retornar esse nome serializado
+    - Checkbox a esquerda do titulo, que recebe do isChecked
+        - Ao ser clicado ele valida se o
+            - O novo valor for true, marca ele e passa junto com o id a palavra concluida, para a função toggleStatus do contextApi
+            - O novo valor for false, desmarca ele e a palavra é pendente e chama a função toggleStatus do contextApi, passando o id tbm            
+    - Titulo na parte superior a esquerda que recebe de title
+    - Descrição abaixo do Titulo que recebe de description
+    - Status de prioridade na parte superior a direita que será do tipo priorityType que chama a função serializarLabels
+    - Status que será do tipo statusType que chama a função serializarLabels
     - Botão de editar task, que ao ser clicada passa para os modalComponent todos os dados do card
     - Botão de remover, que chama o método de deletar do contextApi passando o id
 
-- Criar um componente chamado TaskDashboard
-    - Criar um .map que vai exibir os components de cards e puxando os dados do state armazenado no contextApi
-    - Ele terá um botão de limpar que ao ser clicado chama o ref do componente de modalComponent e reseat os campos de input do formulario
-    - Usando o ref ele deverá acessar o campo de titulo e ao abrir o form ele já está em foco
-    - Colocar na tela a quantidade total de tarefas que é o retorno de uma functions que ver a quantidade de tasks no state, essa função que tem useMemo, que só atualiza quando o state do contextApi for atualizado
+- Colocar na tela do TaskDashboard  a quantidade total de tarefas que é o retorno de uma functions que ver a quantidade de tasks no state, essa função que tem useMemo, que só atualiza quando o state do contextApi for atualizado
 
-- Colocar o TaskDashboard no App
 
-- No App terá um botão de add tarefas, que abrirá um modalComponent
 
 
 - Testes
     - Testar funcionalidade de add task
         - Ao add a task abrirá um modal de add task em que se eu salvar ou fechar o modal ele não apaga os dados os input, só se eu clicar em limpar
     - Testar funcionalidade de editar task
-        - Testar ao alterar o status para concluido ou diferente de concluido
+        - Testar ao alterar o status para concluido ou diferente de concluido, vendo se o checkbox é alterado
     - Testar funcionalidade de excluir task
     - Ver se ao atualizar o state se a contagem total é atualizada
     - Ver se os componentes estão sendo renderizados mais de uma vez, posso colocar um console.log toda ver que ele carrega ante sdo return
