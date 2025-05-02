@@ -88,18 +88,4 @@ x O card component terá:
     x Status que será do tipo statusType que chama a função serializarLabels
     x Botão de remover, que chama o método de deletar do contextApi passando o id
     x Botão de editar task, que ao ser clicada passa para os modalComponent todos os dados do card
-- Colocar na tela do TaskDashboard  a quantidade total de tarefas que é o retorno de uma functions que ver a quantidade de tasks no state, essa função que tem useMemo, que só atualiza quando o state do contextApi for atualizado
-- Resolver problemas no console
-- Verificar se os componentes são renderizados mais de uma vez ao ser chamados
-
-
-
-
-- Testes
-    - Testar funcionalidade de add task
-        - Ao add a task abrirá um modal de add task em que se eu salvar ou fechar o modal ele não apaga os dados os input, só se eu clicar em limpar
-    - Testar funcionalidade de editar task
-        - Testar ao alterar o status para concluido ou diferente de concluido, vendo se o checkbox é alterado
-    - Testar funcionalidade de excluir task
-    - Ver se ao atualizar o state se a contagem total é atualizada
-    - Ver se os componentes estão sendo renderizados mais de uma vez, posso colocar um console.log toda ver que ele carrega ante sdo return
+x Colocar na tela do TaskDashboard  a quantidade total de tarefas que é o retorno de uma functions que ver a quantidade de tasks no state, essa função que tem useMemo, que só atualiza quando o state do contextApi for atualizado
