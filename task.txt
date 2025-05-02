@@ -78,10 +78,10 @@ x Usando o ref no modalComponent ele deverá acessar o campo de titulo e ao abri
 x Colocar o TaskDashboard no App
 - O card component terá:
     x Função para serializar, o nome da função é serializarLabels ele esperar receber como param o statusType ou priorityType e ai tenho que alterar os nomes para labels que de paar ser usado para o user e retornar esse nome serializado
-    - Checkbox a esquerda do titulo, que recebe do isChecked
-        - Ao ser clicado ele valida se o
-            - O novo valor for true, marca ele e passa junto com o id a palavra concluida, para a função toggleStatus do contextApi
-            - O novo valor for false, desmarca ele e a palavra é pendente e chama a função toggleStatus do contextApi, passando o id tbm            
+    x Checkbox a esquerda do titulo, que recebe do isChecked
+        x Ao ser clicado ele valida se o
+            x O novo valor for true, marca ele e passa junto com o id a palavra concluida, para a função toggleStatus do contextApi
+            x O novo valor for false, desmarca ele e a palavra é pendente e chama a função toggleStatus do contextApi, passando o id tbm            
     - Titulo na parte superior a esquerda que recebe de title
     - Descrição abaixo do Titulo que recebe de description
     - Status de prioridade na parte superior a direita que será do tipo priorityType que chama a função serializarLabels

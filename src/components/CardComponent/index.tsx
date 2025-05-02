@@ -1,8 +1,10 @@
 import { Pencil, Trash2 } from "lucide-react";
 import { memo } from "react";
 import { CardProps, PriorityType, StatusType } from "../../tipagens/types";
+import { useTaskContext } from "../../contexts/TaskContext";
 
 function CardComponent({description, id, isChecked, priority, status, title}:CardProps) {
+  const {toggleStatusTask} = useTaskContext()
   function serializarLabels(label:StatusType|PriorityType) {
     switch (label) {
       case "alta":
@@ -19,6 +21,10 @@ function CardComponent({description, id, isChecked, priority, status, title}:Car
         return "Pendente"
     }
   }
+  function alterStatus(isFinish:boolean) {
+    const newStatus: StatusType = isFinish ? 'concluida': 'pendente'
+    toggleStatusTask(id, newStatus)
+  }
     console.log("🚀 ~ CardComponent ~ title:", title)
     console.log("🚀 ~ CardComponent ~ status:", status)
     console.log("🚀 ~ CardComponent ~ priority:", priority)
@@ -33,6 +39,8 @@ function CardComponent({description, id, isChecked, priority, status, title}:Car
               <input
                 type="checkbox"
                 className="mt-1"
+                checked={isChecked}
+                onClick={() => {alterStatus(!isChecked)}}
               />
               <div>
                 <h2 className="text-lg font-semibold">Titulo visual</h2>

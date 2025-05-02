@@ -14,7 +14,7 @@ function App() {
       >
         Adicionar tarefas
       </button>
-      <Modal isOpen={isOpenModal} onClose={() => setIsOpenModal((prevValue) => !prevValue)}  />
+      <Modal isOpen={isOpenModal} onClose={() => setIsOpenModal((prevValue) => !prevValue)} />
       <TaskDashboard />
     </div>
 
