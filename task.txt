@@ -77,7 +77,7 @@ x Criar um componente chamado TaskDashboard
 x Usando o ref no modalComponent ele deverá acessar o campo de titulo e ao abrir o form ele já está em foco
 x Colocar o TaskDashboard no App
 - O card component terá:
-    - Função para serializar, o nome da função é serializarLabels ele esperar receber como param o statusType ou priorityType e ai tenho que alterar os nomes para labels que de paar ser usado para o user e retornar esse nome serializado
+    x Função para serializar, o nome da função é serializarLabels ele esperar receber como param o statusType ou priorityType e ai tenho que alterar os nomes para labels que de paar ser usado para o user e retornar esse nome serializado
     - Checkbox a esquerda do titulo, que recebe do isChecked
         - Ao ser clicado ele valida se o
             - O novo valor for true, marca ele e passa junto com o id a palavra concluida, para a função toggleStatus do contextApi

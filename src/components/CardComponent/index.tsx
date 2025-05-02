@@ -1,8 +1,24 @@
 import { Pencil, Trash2 } from "lucide-react";
 import { memo } from "react";
-import { CardProps } from "../../tipagens/types";
+import { CardProps, PriorityType, StatusType } from "../../tipagens/types";
 
 function CardComponent({description, id, isChecked, priority, status, title}:CardProps) {
+  function serializarLabels(label:StatusType|PriorityType) {
+    switch (label) {
+      case "alta":
+        return "Alta"
+      case "andamento":
+        return "Em andamento"
+      case "baixa":
+        return "Baixa"
+      case "concluida":
+        return "Concluída"
+      case "media":
+        return "Média"
+      case "pendente":
+        return "Pendente"
+    }
+  }
     console.log("🚀 ~ CardComponent ~ title:", title)
     console.log("🚀 ~ CardComponent ~ status:", status)
     console.log("🚀 ~ CardComponent ~ priority:", priority)
