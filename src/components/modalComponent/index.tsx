@@ -1,4 +1,4 @@
-import { forwardRef, memo, useEffect, useState } from "react";
+import { forwardRef, memo, useEffect, useRef, useState } from "react";
 import { ModalProp, PriorityType, StatusType } from "../../tipagens/types";
 import { Input } from "../InputComponent";
 import { Select } from "../SelectComponent";
@@ -8,6 +8,8 @@ import { useTaskContext } from "../../contexts/TaskContext";
 
 const ModalComponent = forwardRef<HTMLFormElement, ModalProp>((props, ref) => {
 
+    const inputRefFocusTitle = useRef<HTMLInputElement>(null);
+
     const [titleValue, setTitleValue] = useState<string>('')
     const [descriptionValue, setDescriptionValue] = useState<string>('')
     const [statusValue, setStatusValue] = useState<StatusType>('pendente')
@@ -16,13 +18,14 @@ const ModalComponent = forwardRef<HTMLFormElement, ModalProp>((props, ref) => {
     const { addTask, editTask } = useTaskContext()
 
     useEffect(() => {
+        inputRefFocusTitle.current?.focus()
         if (props.task) {
             setDescriptionValue(props.task.descriptions)
             setPriorityValue(props.task.priority)
             setStatusValue(props.task.status)
             setTitleValue(props.task.title)
         }
-    }, [])
+    }, [props.isOpen])
 
     if (!props.isOpen) { return null }
 
@@ -42,6 +45,7 @@ const ModalComponent = forwardRef<HTMLFormElement, ModalProp>((props, ref) => {
                 <form ref={ref} className="flex flex-col space-y-4">
                     {/* Input Título */}
                     <Input
+                        ref={inputRefFocusTitle}
                         label="Título"
                         placeholder="Digite o título"
                         value={titleValue}

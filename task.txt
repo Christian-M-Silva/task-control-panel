@@ -74,7 +74,7 @@ x Criar um componente chamado TaskDashboard
     x Criar função chamada isChecked que esperar receber do tipo statusType e ver se status é diferente de concluido, se for retorna false, senão true
     x Criar um .map que vai exibir os components de cards e puxando os dados do state armazenado no contextApi e passar para esse card esses valores
         x No caso do status, ao passar eu chamo a função isChecked, passando de param o status
-- Usando o ref no modalComponent ele deverá acessar o campo de titulo e ao abrir o form ele já está em foco
+x Usando o ref no modalComponent ele deverá acessar o campo de titulo e ao abrir o form ele já está em foco
 - Colocar o TaskDashboard no App
 - Ele terá um botão de limpar que ao ser clicado chama o ref do componente de modalComponent e reseat os campos de input do formulario
 - O card component terá:
