@@ -10,7 +10,7 @@ export function TaskDashboard() {
 
     return (
         <>
-            {tasks.map(task => <Card description={task.descriptions} id={task.id} isChecked={isChecked(task.status)} priority={task.priority} status={task.status} title={task.title}></Card>)}
+            {tasks.map(task => <Card description={task.description} id={task.id} isChecked={isChecked(task.status)} priority={task.priority} status={task.status} title={task.title}></Card>)}
         </>
     )
 }

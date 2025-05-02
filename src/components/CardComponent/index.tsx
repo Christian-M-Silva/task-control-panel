@@ -1,11 +1,14 @@
 import { Pencil, Trash2 } from "lucide-react";
-import { memo } from "react";
+import { memo, useState } from "react";
 import { CardProps, PriorityType, StatusType } from "../../tipagens/types";
 import { useTaskContext } from "../../contexts/TaskContext";
+import { Modal } from "../ModalComponent";
 
-function CardComponent({description, id, isChecked, priority, status, title}:CardProps) {
-  const {toggleStatusTask} = useTaskContext()
-  function serializarLabels(label:StatusType|PriorityType) {
+function CardComponent({ description, id, isChecked, priority, status, title }: CardProps) {
+  const { toggleStatusTask, removeTask } = useTaskContext()
+  const [isOpenModal, setIsOpenModal] = useState<boolean>(false)
+
+  function serializarLabels(label: StatusType | PriorityType) {
     switch (label) {
       case "alta":
         return "Alta"
@@ -21,56 +24,54 @@ function CardComponent({description, id, isChecked, priority, status, title}:Car
         return "Pendente"
     }
   }
-  function alterStatus(isFinish:boolean) {
-    const newStatus: StatusType = isFinish ? 'concluida': 'pendente'
+  function alterStatus(isFinish: boolean) {
+    const newStatus: StatusType = isFinish ? 'concluida' : 'pendente'
     toggleStatusTask(id, newStatus)
   }
-    console.log("🚀 ~ CardComponent ~ title:", title)
-    console.log("🚀 ~ CardComponent ~ status:", status)
-    console.log("🚀 ~ CardComponent ~ priority:", priority)
-    console.log("🚀 ~ CardComponent ~ isChecked:", isChecked)
-    console.log("🚀 ~ CardComponent ~ id:", id)
-    console.log("🚀 ~ CardComponent ~ description:", description)
-    
-    return (
-        <div className="flex flex-col p-4 border rounded-2xl shadow-sm bg-white w-full max-w-md">
-          <div className="flex justify-between items-start">
-            <div className="flex items-start gap-2">
-              <input
-                type="checkbox"
-                className="mt-1"
-                checked={isChecked}
-                onClick={() => {alterStatus(!isChecked)}}
-              />
-              <div>
-                <h2 className="text-lg font-semibold">Titulo visual</h2>
-                <p className="text-gray-600 text-sm">Descrição maior descrita com mais uinformações e mais dados nsssssssssssssssssssssssssssssssnssssssssssssssss</p>
-              </div>
-            </div>
-            <span className={`text-sm font-medium`}>
-             baixa
-            </span>
-          </div>
-    
-          <div className="flex justify-between items-center mt-4">
-            <span className="text-sm text-gray-500">Em andamento</span>
-            <div className="flex gap-2">
-              <button
-                className="text-blue-600 hover:text-blue-800 transition-colors"
-                title="Editar"
-              >
-                <Pencil size={18} />
-              </button>
-              <button
-                className="text-red-600 hover:text-red-800 transition-colors"
-                title="Remover"
-              >
-                <Trash2 size={18} />
-              </button>
-            </div>
+
+  return (
+    <div className="flex flex-col p-4 border rounded-2xl shadow-sm bg-white w-full max-w-md">
+      <div className="flex justify-between items-start">
+        <div className="flex items-start gap-2">
+          <input
+            type="checkbox"
+            className="mt-1"
+            checked={isChecked}
+            onClick={() => { alterStatus(!isChecked) }}
+          />
+          <div>
+            <h2 className="text-lg font-semibold">{title}</h2>
+            <p className="text-gray-600 text-sm">{description}</p>
           </div>
         </div>
-      );
+        <span className={`text-sm font-medium`}>
+          {serializarLabels(priority)}
+        </span>
+      </div>
+
+      <div className="flex justify-between items-center mt-4">
+        <span className="text-sm text-gray-500">{serializarLabels(status)}</span>
+        <div className="flex gap-2">
+          <button
+            className="text-blue-600 hover:text-blue-800 transition-colors cursor-pointer"
+            title="Editar"
+            onClick={() => setIsOpenModal((prevValue) => !prevValue)}
+          >
+            <Pencil size={18} />
+          </button>
+          <button
+            className="text-red-600 hover:text-red-800 transition-colors cursor-pointer"
+            title="Remover"
+            onClick={() => removeTask(id)}
+          >
+            <Trash2 size={18} />
+          </button>
+        </div>
+      </div>
+
+      <Modal isOpen={isOpenModal} onClose={() => setIsOpenModal((prevValue) => !prevValue)} task={{description, id, priority, status, title}} />
+    </div>
+  );
 }
 
 export const Card = memo(CardComponent);

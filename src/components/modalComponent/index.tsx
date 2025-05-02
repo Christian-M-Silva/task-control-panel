@@ -20,7 +20,7 @@ const ModalComponent = forwardRef<HTMLFormElement, ModalProp>((props, ref) => {
     useEffect(() => {
         inputRefFocusTitle.current?.focus()
         if (props.task) {
-            setDescriptionValue(props.task.descriptions)
+            setDescriptionValue(props.task.description)
             setPriorityValue(props.task.priority)
             setStatusValue(props.task.status)
             setTitleValue(props.task.title)
@@ -88,10 +88,10 @@ const ModalComponent = forwardRef<HTMLFormElement, ModalProp>((props, ref) => {
                         onClick={(e) => {
                             e.preventDefault()
                             if (isProps) {
-                                editTask({ descriptions: descriptionValue, priority: priorityValue, status: statusValue, title: titleValue, id: props.task?.id as string })
+                                editTask({ description: descriptionValue, priority: priorityValue, status: statusValue, title: titleValue, id: props.task?.id as string })
+                            } else {
+                                addTask({ description: descriptionValue, priority: priorityValue, status: statusValue, title: titleValue })
                             }
-                            addTask({ descriptions: descriptionValue, priority: priorityValue, status: statusValue, title: titleValue })
-
                             props.onClose()
                         }}
                         type="submit"

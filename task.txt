@@ -76,19 +76,21 @@ x Criar um componente chamado TaskDashboard
         x No caso do status, ao passar eu chamo a função isChecked, passando de param o status
 x Usando o ref no modalComponent ele deverá acessar o campo de titulo e ao abrir o form ele já está em foco
 x Colocar o TaskDashboard no App
-- O card component terá:
+x O card component terá:
     x Função para serializar, o nome da função é serializarLabels ele esperar receber como param o statusType ou priorityType e ai tenho que alterar os nomes para labels que de paar ser usado para o user e retornar esse nome serializado
     x Checkbox a esquerda do titulo, que recebe do isChecked
         x Ao ser clicado ele valida se o
             x O novo valor for true, marca ele e passa junto com o id a palavra concluida, para a função toggleStatus do contextApi
             x O novo valor for false, desmarca ele e a palavra é pendente e chama a função toggleStatus do contextApi, passando o id tbm            
-    - Titulo na parte superior a esquerda que recebe de title
-    - Descrição abaixo do Titulo que recebe de description
-    - Status de prioridade na parte superior a direita que será do tipo priorityType que chama a função serializarLabels
-    - Status que será do tipo statusType que chama a função serializarLabels
-    - Botão de editar task, que ao ser clicada passa para os modalComponent todos os dados do card
-    - Botão de remover, que chama o método de deletar do contextApi passando o id
+    x Titulo na parte superior a esquerda que recebe de title
+    x Descrição abaixo do Titulo que recebe de description
+    x Status de prioridade na parte superior a direita que será do tipo priorityType que chama a função serializarLabels
+    x Status que será do tipo statusType que chama a função serializarLabels
+    x Botão de remover, que chama o método de deletar do contextApi passando o id
+    x Botão de editar task, que ao ser clicada passa para os modalComponent todos os dados do card
 - Colocar na tela do TaskDashboard  a quantidade total de tarefas que é o retorno de uma functions que ver a quantidade de tasks no state, essa função que tem useMemo, que só atualiza quando o state do contextApi for atualizado
+- Resolver problemas no console
+- Verificar se os componentes são renderizados mais de uma vez ao ser chamados
 
 
 
