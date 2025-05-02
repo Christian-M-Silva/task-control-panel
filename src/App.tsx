@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="flex justify-center">
       <button
-        className="mt-4 w-full bg-green-700 text-white py-2 rounded-lg hover:bg-green-700 transition cursor-pointer"
+        className="mt-4 bg-green-700 text-white p-4 rounded-lg hover:bg-green-950 transition cursor-pointer"
         onClick={() => setIsOpenModal((prevValue) => !prevValue)}
       >
         Adicionar tarefas

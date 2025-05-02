@@ -74,11 +74,10 @@ x Criar um componente chamado TaskDashboard
     x Criar função chamada isChecked que esperar receber do tipo statusType e ver se status é diferente de concluido, se for retorna false, senão true
     x Criar um .map que vai exibir os components de cards e puxando os dados do state armazenado no contextApi e passar para esse card esses valores
         x No caso do status, ao passar eu chamo a função isChecked, passando de param o status
-    - Finalizar de ajeitar o CardComponent
-    - Ele terá um botão de limpar que ao ser clicado chama o ref do componente de modalComponent e reseat os campos de input do formulario
 - Usando o ref no modalComponent ele deverá acessar o campo de titulo e ao abrir o form ele já está em foco
-- Colocar o TaskDashboard no App VER ZAP TASKS
-- O modal component terá:
+- Colocar o TaskDashboard no App
+- Ele terá um botão de limpar que ao ser clicado chama o ref do componente de modalComponent e reseat os campos de input do formulario
+- O card component terá:
     - Função para serializar, o nome da função é serializarLabels ele esperar receber como param o statusType ou priorityType e ai tenho que alterar os nomes para labels que de paar ser usado para o user e retornar esse nome serializado
     - Checkbox a esquerda do titulo, que recebe do isChecked
         - Ao ser clicado ele valida se o
@@ -90,7 +89,6 @@ x Criar um componente chamado TaskDashboard
     - Status que será do tipo statusType que chama a função serializarLabels
     - Botão de editar task, que ao ser clicada passa para os modalComponent todos os dados do card
     - Botão de remover, que chama o método de deletar do contextApi passando o id
-
 - Colocar na tela do TaskDashboard  a quantidade total de tarefas que é o retorno de uma functions que ver a quantidade de tasks no state, essa função que tem useMemo, que só atualiza quando o state do contextApi for atualizado
 
 
